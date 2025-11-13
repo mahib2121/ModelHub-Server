@@ -5,10 +5,11 @@ const cors = require('cors')
 app.use(cors())
 app.use(express.json())
 
-
+require('dotenv').config()
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-const uri = "mongodb+srv://dbUserMk:123%40456%23mK@cluster0.0h8qk0h.mongodb.net/?appName=Cluster0";
+// const uri = "mongodb+srv://dbUserMk:123%40456%23mK@cluster0.0h8qk0h.mongodb.net/?appName=Cluster0";
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.0h8qk0h.mongodb.net/?appName=Cluster0`;
 //
 //mongo pass = 123@456#mK
 
